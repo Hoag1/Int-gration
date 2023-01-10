@@ -32,13 +32,13 @@ int epuimenthe;
 String eFruit;
 String eMenthe;
 
-String hum1; //setup envoi vers nodered
+String hum1; 
 String temp1;
 
-//String datar;
+
 
 String serialResponse = "";
-char sz[50] ; //"Here; is some; sample;100;data;1.414;1020";
+char sz[50] ; 
 String msg1;
 String msg2;
 int i=0;
@@ -60,7 +60,7 @@ void setup()
   SPI.begin();
   rfid.init();
   lcd.begin();
-  lcd.backlight(); //open the backlight
+  lcd.backlight(); 
   lcd.print("Initialisation...");
   pinMode(cap_prod_fruit, INPUT);
   pinMode(cap_prod_menthe, INPUT);
@@ -170,7 +170,7 @@ void loop()
   }
 
   
-  float h = dht.readHumidity();       //lecture capteur temp et hum
+  float h = dht.readHumidity();       
   float t = dht.readTemperature();
     
   hum1 = String(int(h));                   
@@ -208,7 +208,7 @@ i=0;
     serialResponse.toCharArray(buf, sizeof(buf));
     char *p = buf;
     char *str;
-    while ((str = strtok_r(p, ";", &p)) != NULL) // delimiter is the semicolon
+    while ((str = strtok_r(p, ";", &p)) != NULL) 
     {
     len = sizeof(str);
     if (i==0)
@@ -219,10 +219,6 @@ i=0;
     {
     msg2=String(str);
     }
-    //
-      //Serial.println(str);
-      //Serial.println(out1);
-      //
       i=i+1;
       
     }
